@@ -130,23 +130,3 @@ f4 <- ggplot(data = res, mapping = aes(x = n)) +
 fig1 <- ggarrange(f1, f3, f2, f4)
 fig1
 
-
-
-
-
-
-
-
-
-
-
-
-
-library(margins)
-
-x <- rbinom(10000, 1, 0.4)
-y <- rbinom(10000, 1, 0.89 + 0.1*x)
-m1 <- glm(y ~ as.factor(x), family = "binomial")
-m2 <- lm(y ~ as.factor(x))
-m2
-margins(m1)
